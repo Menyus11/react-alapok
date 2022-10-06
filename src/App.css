@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+#calc_container {
+  max-width: 600px;
+}
+
+.display {
+  min-height: 60px;
+  font-size: xx-large;
+} 
+
+.calcbutton {
+  font-size: xx-large;
+}
