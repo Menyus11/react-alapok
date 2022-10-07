@@ -5,15 +5,15 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import { 
+
+import {
   ListingPosts,
-  Calculator
- } from './components';
-
-
-function PictureViewer() {
-  return <h2>Ez a fotó oldal tartalma ...</h2>
-}
+  Calculator,
+  HomePage,
+  PicturesPage,
+  VideoPage,
+  AccountPage
+} from './components';
 
 function App() {
   return (
@@ -24,24 +24,27 @@ function App() {
         <nav className="navbar navbar-expand-lg bg-dark">
           <div className="container-fluid">
             <nav>
-              <Link to="/" className='text-light m-3' style={{textDecoration: "none", fontSize: "1.5vw"}} ><b>Postok listázása</b></Link>
-              <Link to="calculator" className='text-light m-3' style={{textDecoration: "none", fontSize: "1.5vw"}} ><b>Számológép</b></Link>
-              <Link to="pictureviewer" className='text-light m-3' style={{textDecoration: "none", fontSize: "1.5vw"}} ><b>Fotó / Videó album</b></Link>
+              <Link to="/" className='text-light m-3' style={{ textDecoration: "none", fontSize: "1.3vw" }} ><b>Home</b></Link>
+              <Link to="pictures" className='text-light m-3' style={{ textDecoration: "none", fontSize: "1.3vw" }} ><b>Fotók</b></Link>
+              <Link to="videos" className='text-light m-3' style={{ textDecoration: "none", fontSize: "1.3vw" }} ><b>Videók</b></Link>
+              <Link to="posts" className='text-light m-3' style={{ textDecoration: "none", fontSize: "1.3vw" }} ><b>Posztok</b></Link>
+              <Link to="calculator" className='text-light m-3' style={{ textDecoration: "none", fontSize: "1.3vw" }} ><b>Számológép</b></Link>
+              <Link to="login" className='text-light m-3' style={{ textDecoration: "none", fontSize: "1.3vw" }} ><b>Bejelentkezés</b></Link>
+
             </nav>
           </div>
         </nav>
 
         <Routes>
-          <Route index element={<ListingPosts />} />
+          <Route index element={<HomePage />} />
+          <Route path="/pictures" element={<PicturesPage />} />
+          <Route path="/videos" element={<VideoPage />} />
+          <Route path="/posts" element={<ListingPosts />} />
           <Route path="/calculator" element={<Calculator />} />
-          <Route path="/pictureviewer" element={<PictureViewer />} />
-
+          <Route path="/login" element={<AccountPage />} />
         </Routes>
 
       </BrowserRouter>
-
-
-
 
     </div>
   );
